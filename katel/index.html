@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Katlamaja</title>
+	<link type="text/css" rel="stylesheet" href="ex.css"/>
+	<script type="text/javascript" src="d3.v2.js"></script>
+				
+</head>
+
+<body>
+	
+	<div id="content">
+	<div id="wrap" style="vertical-align:middle">
+		<p>Tere, siin katlamaja.</p>
+		<p>Kuupäev, kellaaeg: <span id="kell"></span></p>
+		<p>Sisenev temperatuur: <span id="t1"></span> <span style="font-size:26px">℃</span></p>
+		<p>Väljuv temperatuur: <span id="t2"></span> <span style="font-size:26px">℃</span></p>
+	</div>	
+	<br><br>
+	<img src = 'http://s3-eu-west-1.amazonaws.com/katlamaja/last1h.png'></img>
+	<br><br>
+	<img src = 'last3h.png'></img>
+
+	</div>
+	
+
+	<script type="text/javascript">
+	
+
+	
+		d3.json("http://s3-eu-west-1.amazonaws.com/katlamaja/currentTemp.json", function(data){
+			d3.select("#kell").html(data['time']),
+			d3.select("#t1").html(data['t1']),
+			d3.select("#t2").html(data['t2'])
+		});
+		
+		var interval = setInterval(function() {
+			d3.json("http://s3-eu-west-1.amazonaws.com/katlamaja/currentTemp.json", function(data){
+				d3.select("#kell").html(data['time']);
+				d3.select("#t1").html(data['t1']);
+				d3.select("#t2").html(data['t2']);
+			});							
+		}, 10000);
+
+	</script>
+
+</body>	
+</html>
