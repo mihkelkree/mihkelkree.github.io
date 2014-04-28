@@ -15,6 +15,7 @@ var wms = new OpenLayers.Layer.WMS(
 					);
 map.addLayer(wms);
 map.addControl(new OpenLayers.Control.MousePosition());
+map.addControl(new OpenLayers.Control.ScaleLine({bottomOutUnits: ''}));
 
 var toomemagi = new OpenLayers.LonLat(659000, 6474200);
 map.setCenter(toomemagi,9);
