@@ -12,7 +12,7 @@ var layer1 = new OpenLayers.Layer.WMS(
 						'pohi_vv',
 						'http://kaart.maaamet.ee/wms/alus?',
 						{ layers: 'pohi_vv', 'format': 'image/png' },
-						{'tileSize': new OpenLayers.Size(256, 256),scales: [1e4, 5e3, 2e3,1e3,5e2],isBaseLayer: false }
+						{'tileSize': new OpenLayers.Size(512, 512),scales: [1e4, 5e3, 2e3,1e3,5e2],isBaseLayer: false }
 					);
 
 var layer2 = new OpenLayers.Layer.WMS(
