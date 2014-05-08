@@ -24,7 +24,7 @@ var layer2 = new OpenLayers.Layer.WMS(
                        {'tileSize': new OpenLayers.Size(512, 512), scales: [1e6, 5e5, 2e5, 1e5, 5e4, 2e4], isBaseLayer: false}
                );
 
-var base = new OpenLayers.Layer("blank",{isBaseLayer: true, scales: sc, minScale:5e2, maxScale:5e6});
+var base = new OpenLayers.Layer("blank",{isBaseLayer: true, scales: sc});
 					
 					
 map.addLayer(base);
